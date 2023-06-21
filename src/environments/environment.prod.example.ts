@@ -1,0 +1,7 @@
+export const environment = {
+    production: true,
+    apiKey: "", // insert api key here
+    apiHost: "", // insert api host here
+    email: '', // insert email here
+    password: btoa('') // insert password here
+};

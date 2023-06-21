@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { LatestMovieComponent } from './latest-movie/latest-movie.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
+import { SuggestMovieComponent } from './suggest-movie/suggest-movie.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+    { path: 'auth/login', component: LoginComponent },
+    { path: 'latest', component: LatestMovieComponent },
+    { path: 'search', component: SearchMovieComponent},
+    { path: 'suggest', component: SuggestMovieComponent}
 ];
+
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
